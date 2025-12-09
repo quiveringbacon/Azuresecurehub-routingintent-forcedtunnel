@@ -1,4 +1,4 @@
-# Azuresecurehub with routingintent and forced tunneling
+# Azure securehub with routing intent and forced tunneling
 Hi all, this sets up a securehub, a couple of spoke vnets and a firewall spoke vnet. Routing intent is enabled but uses a "Forced tunnel" configuration to force internet traffic out the spoke firewall. More info here: https://learn.microsoft.com/en-us/azure/virtual-wan/about-internet-routing. The location for the resources is limited in this one so it defaults to East US.
 This also creates a log analytics workspace and diagnostic settings for the firewall logs for both firewalls. You'll be prompted for the resource group name, your public ip and username and password to use for the VM's. NSG's are placed on the default subnets of each vnet allowing RDP access from your public ip and route tables are added sending traffic to your public ip to the internet. This also creates a logic app that will delete the resource group in 24hrs.
 
